@@ -53,11 +53,12 @@ export default function Skills() {
       <Container>
         <Row>
           <Col>
-            <div className="skill-box wow inside">
-              <h2>Skills</h2>
+            <div className="skill-box inside">
+              <h2 className="skill-header">Skills</h2>
               <p className="skill-header-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-                Ippadum has been the industry's standard dummy text.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry Lorem Ippadum has been the industry's standard dummy
+                text.
               </p>
 
               <Slider {...settings} className="slider-inner">

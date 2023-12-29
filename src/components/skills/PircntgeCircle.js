@@ -1,4 +1,4 @@
-function Percentgecircle({ colors, off, boxShadow, skill, id }) {
+function Percentgecircle({ off, boxShadow, skill, id }) {
   //will calc and get number to cover the circle like 285
   let calc = 440 - (440 * off) / 100;
   let countup = 0;
@@ -17,7 +17,7 @@ function Percentgecircle({ colors, off, boxShadow, skill, id }) {
           style={{ "--dot-shadow-color": boxShadow, "--off-percent": calc }}
         >
           {/* <div
-          dot dont romve cause its cool but not good for this design
+           dont romve cause its cool but not good for this design
           className="dot"
           style={{
             transform: `rotate(${3.6 * off}deg)`,

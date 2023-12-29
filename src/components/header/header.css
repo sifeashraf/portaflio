@@ -64,10 +64,10 @@ span.navbar-text {
   transition: 0.3s ease-in-out;
 }
 .social-icon a:hover img {
-  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg)
-    brightness(95%) contrast(86%);
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg)
-    brightness(95%) contrast(86%);
+  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(7%)
+    saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
+    hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 
 @media (max-width: 600px) {
@@ -77,39 +77,40 @@ span.navbar-text {
 }
 .button {
   font-weight: 700;
-  color: #fff;
   border: 1px solid #fff;
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
   position: relative;
+  transition: 0.3s linear all;
+  z-index: 11;
   background-color: transparent;
-  transition: 0.3s ease-in-out;
-}
-.button span {
-  z-index: 1;
+  color: white;
 }
 .button::before {
   content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  background-color: #fff;
   width: 0%;
   height: 100%;
-  position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: 0.3s ease-in-out;
+  transition: linear all 0.3s;
+}
+.button:hover::before {
+  width: 100%;
 }
 .button:hover {
-  color: #121212 !important;
+  color: black;
+}
+.button span,
+a {
+  z-index: 30;
+  color: inherit;
 }
 
-.button:hover::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
   outline: none;
@@ -202,6 +203,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
+  min-height: 100px;
 }
 .banner p {
   color: #b8b8b8;
@@ -211,9 +213,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 96%;
 }
 
-.button:hover .downloader {
-  color: #121212 !important;
-}
 .banner button:hover svg {
   margin-left: 25px;
 }

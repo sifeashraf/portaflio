@@ -6,9 +6,9 @@ export default function Downloader() {
       href="new-cv.pdf"
       download={"cv"}
       className="downloader"
-      style={{ textDecoration: "none", color: "white" }}
+      style={{ textDecoration: "none" }}
     >
-      Download cv
+      Download My CV
     </a>
   );
 }

@@ -8,9 +8,6 @@ import Downloader from "./Downloader";
 import { FiArrowRightCircle } from "react-icons/fi";
 import headerimg from "../../assets/img/header-img.svg";
 
-//import style
-import "animate.css";
-
 export default function Banner() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -19,7 +16,11 @@ export default function Banner() {
   //delta is the time btweeen charcher
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["FrontEnd Devloper ", "Javascript Devloper", "React Devloper"];
+  const toRotate = [
+    "FrontEnd Devloper ",
+    "Javascript Devloper",
+    "React Devloper",
+  ];
   //period is the time between words
 
   useEffect(() => {
@@ -62,22 +63,24 @@ export default function Banner() {
         <Col xs={12} md={6} xl={7} className="align">
           <TrackVisibility>
             {({ isVisible }) => (
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              <div
+                className={isVisible ? "animate__animated animate__fadeIn" : ""}
+              >
                 <div className="tagline"> welcome to my proraflio</div>
                 <h1>
-                  {" "}
                   {"Hi i'm a Sife "}
                   <div className="wrap">{text}</div>
                 </h1>
                 <p>
-                  hello Iam sife sife Ashfraf iam front end devloper that started front joyrny from
-                  year and have iam now 20 years old and at collge{" "}
+                  hello Iam sife sife Ashfraf iam front end devloper that
+                  started front joyrny from year and have iam now 20 years old
+                  and at collge{" "}
                   <a href="https://www.facebook.com/profile.php?id=100068730871445">
                     Faculty of Sharia and Law, Al-Azhar
                   </a>{" "}
                   and i live on Alex
                 </p>
-                <button className="vvd button">
+                <button className="button">
                   <span>
                     <Downloader />
                     <FiArrowRightCircle size={25} />
@@ -90,8 +93,14 @@ export default function Banner() {
         <Col xs={12} md={6} xl={5}>
           <TrackVisibility>
             {({ isVisible }) => (
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <img src={headerimg} alt="Header img" style={{ width: "100%" }} />
+              <div
+                className={isVisible ? "animate__animated animate__fadeIn" : ""}
+              >
+                <img
+                  src={headerimg}
+                  alt="Header img"
+                  style={{ width: "100%" }}
+                />
               </div>
             )}
           </TrackVisibility>

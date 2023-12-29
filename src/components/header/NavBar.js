@@ -32,7 +32,6 @@ export default function NavBar() {
   }, []);
 
   return (
-    // <Router>
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="/">
@@ -45,39 +44,44 @@ export default function NavBar() {
           <Nav className="ms-auto">
             <Nav.Link
               href="#home"
-              className={activeLink === "home" ? "active navbar-link" : "navbar-link"}
-              onClick={() => onUpdateActiveLink("home")}>
+              className={
+                activeLink === "home" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("home")}
+            >
               Home
             </Nav.Link>
             <Nav.Link
               href="#skills"
-              className={activeLink === "skills" ? "active navbar-link" : "navbar-link"}
-              onClick={() => onUpdateActiveLink("skills")}>
+              className={
+                activeLink === "skills" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("skills")}
+            >
               Skills
             </Nav.Link>
             <Nav.Link
               href="#projects"
-              className={activeLink === "projects" ? "active navbar-link" : "navbar-link"}
-              onClick={() => onUpdateActiveLink("projects")}>
+              className={
+                activeLink === "projects" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => onUpdateActiveLink("projects")}
+            >
               Projects
             </Nav.Link>
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
+              <a href="https://www.facebook.com/sife.ashraf.756859/">
                 <img src={navIcon1} alt="" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/sife-ashraf-8029b027b/">
                 <img src={navIcon2} alt="" />
-              </a>
-              <a href="#">
-                <img src={navIcon3} alt="" />
               </a>
             </div>
           </span>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    // </Router>
   );
 }
