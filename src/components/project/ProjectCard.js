@@ -1,7 +1,6 @@
-
 //import style
 import "bootstrap/dist/css/bootstrap.min.css";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 //import icon
 import { SiFirebase } from "react-icons/si";
@@ -15,8 +14,6 @@ export default function ProjectCard({
   githubicon,
   githublink,
 }) {
-
-
   let handlehover = (e) => {
     let temp;
     if (e.target.parentNode.classList.value === "project-box") {
@@ -39,15 +36,21 @@ export default function ProjectCard({
       });
     }
   };
+  let mainvariant = {
+    view: {
+      y: [40, 0],
+      opacity: [0, 1],
+    },
+  };
 
   return (
     <motion.div
       className="main"
       key={Math.floor(Math.random() * 10000)}
       layout
-      transition={{ duration: 0.5 }}
-      initial={{ transform: `translateY(40px)`, opacity: 0.1 }}
-      animate={{ transform: "translateY(0)", opacity: 1 }}
+      transition={{ duration: 1 }}
+      variants={mainvariant}
+      whileInView="view"
     >
       <div
         className="project-box"

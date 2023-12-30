@@ -74,14 +74,11 @@
   gap: 15px;
 }
 .main {
-  /* margin: 0 0 15px 0; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main.visible {
-  transform: rotate(50deg) !important;
-}
+
 .project-box {
   width: 320px;
   height: 200px;
@@ -90,18 +87,9 @@
   margin-bottom: 15px;
   position: relative;
   z-index: 10;
+  overflow: hidden;
+  transition: 1s ease-in-out all;
 }
-/* @media screen and (max-width: 711px) {
-  .project-box {
-    width: 100% !important;
-    height: 200px;
-  }
-} */
-
-/* .project-box.active-animation {
-  animation: 1s ease-out fadeInUpcard;
-}
-*/
 
 .project-box.filter {
   filter: blur(4.79px) contrast(0.51) grayscale(0.63);
@@ -115,11 +103,6 @@
   background-repeat: no-repeat;
 }
 
-.project-box {
-  position: relative;
-  overflow: hidden;
-  transition: 1s ease-in-out all;
-}
 .project-box::before {
   content: "";
   width: 100%;

@@ -2,6 +2,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
 import Percentgecircle from "./PircntgeCircle";
+import { motion } from "framer-motion";
 
 //import img
 import colorSharp from "../../assets/img/color-sharp.png";
@@ -48,17 +49,36 @@ export default function Skills() {
     ],
   };
 
+  let textvariant = {
+    initial: {
+      opacity: 0,
+      y: 70,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <section className="skills" id="skills">
+    <motion.section
+      className="skills"
+      id="skills"
+      variants={textvariant}
+      initial="initial"
+      animate="animate"
+      transition={{
+        type: "spring",
+        duration: 2,
+      }}
+    >
       <Container>
         <Row>
           <Col>
             <div className="skill-box inside">
               <h2 className="skill-header">Skills</h2>
               <p className="skill-header-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry Lorem Ippadum has been the industry's standard dummy
-                text.
+                this is my Knowledge of programming langue over time
               </p>
 
               <Slider {...settings} className="slider-inner">
@@ -78,14 +98,14 @@ export default function Skills() {
                 />
                 <Percentgecircle
                   colors={"white"}
-                  off={60}
+                  off={70}
                   skill={"javascript"}
                   boxShadow={"green"}
                   id={3}
                 />
                 <Percentgecircle
                   colors={"white"}
-                  off={50}
+                  off={60}
                   skill={"react"}
                   boxShadow={"green"}
                   id={4}
@@ -96,6 +116,6 @@ export default function Skills() {
         </Row>
       </Container>
       <img className="background-image-left" src={colorSharp} alt="back " />
-    </section>
+    </motion.section>
   );
 }

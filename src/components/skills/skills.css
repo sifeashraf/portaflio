@@ -35,23 +35,7 @@
   height: 100%;
 }
 
-.skill-header {
-  animation: 1s ease-out fadeInUp;
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(15);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 @-webkit-keyframes updown {
   0% {
     transform: translateY(-20px);
