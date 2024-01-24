@@ -1,7 +1,7 @@
 // import hook
 import React, { useState } from "react";
 // import imgs
-import contactimg from "../../assets/img/contact-img.svg";
+import contactimg from "../../assets/img/contact-img.webp";
 //import copmponents
 import { Col, Row, Container } from "react-bootstrap";
 // immport style
@@ -95,7 +95,8 @@ export default function Contact() {
                     value={formationdetail.messgae}
                     placeholder="enter text"
                     name="messgae"
-                    onChange={(e) => formationchange(e)}></textarea>
+                    onChange={(e) => formationchange(e)}
+                  ></textarea>
                   <button type="submit">
                     <span>{buttontext}</span>
                   </button>

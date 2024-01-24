@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 //import img
 import { FiArrowRightCircle } from "react-icons/fi";
-import headerimg from "../../assets/img/header-img.svg";
+import headerimg from "../../assets/img/header-img.webp";
 
 export default function Banner() {
   const [loopNum, setLoopNum] = useState(0);
@@ -52,9 +52,9 @@ export default function Banner() {
 
   let imgvariant = {
     animate: {
-      y: [-50, 50, -50],
+      y: [0, -70, 0],
       transition: {
-        duration: 4,
+        duration: 4.5,
         repeat: Infinity,
       },
     },

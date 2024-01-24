@@ -1,87 +1,165 @@
-//import hooks
-import React, { useState, useEffect } from "react";
-//import component
-import { Container, Nav, Navbar } from "react-bootstrap";
-//import img
-import logo from "../../assets/img/logo.svg";
-import navIcon1 from "../../assets/img/nav-icon1.svg";
-import navIcon2 from "../../assets/img/nav-icon2.svg";
-import navIcon3 from "../../assets/img/nav-icon3.svg";
-//import style
+import { BsLinkedin, BsWhatsapp, BsFacebook } from "react-icons/bs";
+
+import { AiOutlineMenu } from "react-icons/ai";
+import { useState } from "react";
+import "./header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./header.css";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Link,
+  Typography,
+  MenuItem,
+  Menu,
+  useScrollTrigger,
+  createTheme,
+} from "@mui/material";
 
-export default function NavBar() {
-  let [activeLink, setactivelink] = useState("");
-  let [scrolled, setscrolld] = useState(false);
+import logo from "../../assets/img/my-logo.webp";
 
-  let onUpdateActiveLink = (value) => {
-    setactivelink(value);
+function ResponsiveAppBar() {
+  let linkstyles = { color: "#fff", opacity: 0.75, "&:hover": { opacity: 1 } };
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  let theme = createTheme();
+  console.log(theme);
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
-  useEffect(() => {
-    let onscroll = () => {
-      if (window.scrollY > 50) {
-        setscrolld(true);
-      } else {
-        setscrolld(false);
-      }
-    };
 
-    window.addEventListener("scroll", onscroll);
-  }, []);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
   return (
-    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-      <Container>
-        <Navbar.Brand href="/">
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav" className="menu">
-          <Nav className="ms-auto">
-            <Nav.Link
-              href="#home"
-              className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("home")}
+    <Box>
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: useScrollTrigger("1") ? "black" : "transparent",
+          transition: "all .5s ease-in-out",
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box
+            component={"img"}
+            src={logo}
+            alt="Logo"
+            sx={{
+              width: {
+                xs: "50%",
+                sm: "300px ",
+                md: "35%",
+              },
+              maxWidth: { xs: "250px", md: "350px" },
+              minWidth: "250px",
+            }}
+          />
+
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              flexGrow: 1,
+              maxWidth: "400px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexGrow: 1,
+                justifyContent: "space-around",
+              }}
             >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#skills"
-              className={
-                activeLink === "skills" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("skills")}
+              <IconButton
+                key={1}
+                onClick={handleCloseNavMenu}
+                size="small"
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <BsFacebook />
+              </IconButton>
+
+              <IconButton
+                key={1}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <BsWhatsapp />
+              </IconButton>
+              <IconButton
+                key={1}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <BsLinkedin />
+              </IconButton>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexGrow: 1,
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              Skills
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("projects")}
+              <Link href="home" underline="none" sx={linkstyles}>
+                home
+              </Link>
+              <Link href="project" underline="none" sx={linkstyles}>
+                home
+              </Link>
+              <Link href="skills" underline="none" sx={linkstyles}>
+                home
+              </Link>
+            </Box>
+          </Box>
+
+          <Box sx={{ display: { xs: "flex", sm: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              Projects
-            </Nav.Link>
-          </Nav>
-          <span className="navbar-text">
-            <div className="social-icon">
-              <a href="https://www.facebook.com/sife.ashraf.756859/">
-                <img src={navIcon1} alt="" />
-              </a>
-              <a href="https://www.linkedin.com/in/sife-ashraf-8029b027b/">
-                <img src={navIcon2} alt="" />
-              </a>
-            </div>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              <AiOutlineMenu />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              <MenuItem key={1} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{1}</Typography>
+              </MenuItem>
+              <MenuItem key={2} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{2}</Typography>
+              </MenuItem>
+              <MenuItem key={3} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{3}</Typography>
+              </MenuItem>
+            </Menu>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
+export default ResponsiveAppBar;

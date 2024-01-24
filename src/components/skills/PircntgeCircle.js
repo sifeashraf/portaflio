@@ -38,12 +38,12 @@ function Percentgecircle({ off, boxShadow, skill, id }) {
                 <stop offset="1" stopColor="#4A2FBD" />
               </linearGradient>
             </defs>
-            <circle cx={75} cy={75} r={75} fill="transparent"></circle>
+            <circle cx={75} cy={75} r={75} fill="transparent" />
 
-            <circle fill="transparent" cx={75} cy={75} r={75}></circle>
+            <circle fill="transparent" cx={75} cy={75} r={75} />
           </svg>
           <div className="number">
-            <h2 id={id}></h2>
+            <h2 id={id} />
             <p>{skill}</p>
           </div>
         </div>

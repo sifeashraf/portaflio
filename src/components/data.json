@@ -1,0 +1,158 @@
+[
+  {
+    "key": 1,
+    "title": "E-commerce",
+    "description": "made with React",
+    "imgurl": "E-commerce.webp",
+    "imgurl_small": "E-commerce-small.png",
+    "tecnology": "React",
+    "projectlink": "https://e-commerce-8138a.web.app",
+    "githublink": "https://github.com/sifeashraf/E-commerce"
+  },
+  {
+    "key": 2,
+    "title": " CRUD-APP",
+    "description": "made with React  ",
+    "imgurl": "crud-app.webp",
+    "imgurl_small": "crud-app-small.png",
+    "tecnology": "React",
+    "projectlink": "https://reactcrud-app-c7981.web.app/",
+    "githublink": "https://github.com/sifeashraf/ReactCrud-app"
+  },
+  {
+    "key": 3,
+    "title": "E-commerce APP with Auth",
+    "description": "made with React  ",
+    "imgurl": "quiz-app.webp",
+    "imgurl_small": "quiz-app-small.png",
+    "tecnology": "React",
+    "githublink": "https://github.com/sifeashraf/E-commerce-with-user-auth"
+  },
+  {
+    "key": 4,
+    "title": "To-Do Calendar",
+    "description": "made with javascript",
+    "imgurl": "calnder-app.webp",
+    "imgurl_small": "calnder-app-small.png",
+    "tecnology": "JavaScript",
+    "projectlink": "https://calendar-c0580.web.app/",
+    "githublink": "https://github.com/sifeashraf/calendar"
+  },
+  {
+    "key": 5,
+    "title": "XO-game",
+    "description": "made with javascript",
+    "imgurl": "xo-game.webp",
+    "imgurl_small": "xo-game-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/xo-game"
+  },
+  {
+    "key": 6,
+    "title": "simple to-do-list APP",
+    "description": "made with javascript",
+    "imgurl": "simple-to-to-list.webp",
+    "imgurl_small": "simple-to-to-list-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/simple-todo-list-App"
+  },
+  {
+    "key": 7,
+    "title": "scrolling APP",
+    "description": "made with javascript",
+    "imgurl": "scrolling-webiste.webp",
+    "imgurl_small": "scrolling-webiste-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/Scrollig-App"
+  },
+  {
+    "key": 8,
+    "title": "CRUD APP",
+    "description": "made with javascript ",
+    "imgurl": "simple-crud-app.webp",
+    "imgurl_small": "simple-crud-app-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/simple-CRUD-App"
+  },
+  {
+    "key": 9,
+    "title": "Qiz-APP",
+    "description": "made with javascript",
+    "imgurl": "quiz-app.webp",
+    "imgurl_small": "quiz-app-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/Qiz-App"
+  },
+  {
+    "key": 10,
+    "title": "prayer timing",
+    "description": "made with javascript some times prayer time is not right ",
+    "imgurl": "prayer-timing.webp",
+    "imgurl_small": "prayer-timing-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/prayer-timing"
+  },
+  {
+    "key": 11,
+    "title": "Multiplication Qiz-App",
+    "description": "made with javascript",
+    "imgurl": "multiplication-app.webp",
+    "imgurl_small": "multiplication-app-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/Multiplication-App"
+  },
+  {
+    "key": 12,
+    "title": "memory-game",
+    "description": "made with javascript",
+    "imgurl": "memory_game.webp",
+    "imgurl_small": "memory_game-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/memory-game"
+  },
+  {
+    "key": 13,
+    "title": "local-storge controll App",
+    "description": "made with javascript",
+    "imgurl": "local_storge-controll.webp",
+    "imgurl_small": "local_storge-controll-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/local-storge"
+  },
+  {
+    "key": 14,
+    "title": "Hang-Man Game",
+    "description": "made with javascript",
+    "imgurl": "hang_man.webp",
+    "imgurl_small": "hang_man-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/Hang-Man-Game"
+  },
+  {
+    "key": 15,
+    "title": "drag-drop App",
+    "description": "made with javascript",
+    "imgurl": "drag-drop.webp",
+    "imgurl_small": "drag-drop-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/drag-drop"
+  },
+  {
+    "key": 16,
+    "title": "color-genrator",
+    "description": "made with javascript",
+    "imgurl": "colro-genrator.webp",
+    "imgurl_small": "colro-genrator-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/color_genrator"
+  },
+  {
+    "key": 17,
+    "title": "calculator",
+    "description": "made with javascript",
+    "imgurl": "calcoulater.webp",
+    "imgurl_small": "calcoulater-small.png",
+    "tecnology": "JavaScript",
+    "githublink": "https://github.com/sifeashraf/calculator"
+  }
+]

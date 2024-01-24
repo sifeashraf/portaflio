@@ -5,7 +5,7 @@ import Percentgecircle from "./PircntgeCircle";
 import { motion } from "framer-motion";
 
 //import img
-import colorSharp from "../../assets/img/color-sharp.png";
+import colorSharp from "../../assets/img/color-sharp.webp";
 
 //import style
 import "slick-carousel/slick/slick.css";

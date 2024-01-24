@@ -5,15 +5,21 @@ import { motion } from "framer-motion";
 //import icon
 import { SiFirebase } from "react-icons/si";
 
+// import icon
+import { AiFillGithub } from "react-icons/ai";
+import { SiJavascript } from "react-icons/si";
+import { GrReactjs } from "react-icons/gr";
+
 export default function ProjectCard({
   imgurl,
   title,
   description,
   projectlink,
-  icon,
-  githubicon,
+  tecnology,
   githublink,
+  imgurl_small,
 }) {
+  console.log(imgurl_small);
   let handlehover = (e) => {
     let temp;
     if (e.target.parentNode.classList.value === "project-box") {
@@ -57,13 +63,18 @@ export default function ProjectCard({
         onMouseEnter={(e) => handlehover(e)}
         onMouseLeave={(e) => handlehover(e)}
         id={Math.floor(Math.random() * 10000)}
+        // style={{
+        //   backgroundImage: require(`url(../../assets/img/project_image/${imgurl_small})`),
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        // }}
       >
         <div
           style={{ top: "4px", transition: " 0.15s all linear" }}
           href="#"
           className="icon"
         >
-          {icon}{" "}
+          {tecnology === "React" ? <GrReactjs /> : <SiJavascript />}
         </div>
         <a
           style={{
@@ -75,7 +86,7 @@ export default function ProjectCard({
           className="icon"
           target="_blank"
         >
-          {githubicon}
+          <AiFillGithub />
         </a>
         {projectlink && (
           <a
@@ -91,7 +102,12 @@ export default function ProjectCard({
             {<SiFirebase />}
           </a>
         )}
-        <div className="img" style={{ backgroundImage: `url(${imgurl})` }} />
+        <img
+          className="img"
+          loading="lazy"
+          src={require(`../../assets/img/project_image/${imgurl}`)}
+          alt="img of"
+        />
         <div className="project-text">
           <h4>{title}</h4>
           <span>{description}</span>
