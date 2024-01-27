@@ -22,33 +22,33 @@ export default function Banner() {
   ];
   //period is the time between words
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, 100);
+  // useEffect(() => {
+  //   let ticker = setInterval(() => {
+  //     tick();
+  //   }, 100);
 
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
+  //   return () => {
+  //     clearInterval(ticker);
+  //   };
+  // }, [text]);
 
-  let tick = () => {
-    //on init loopnum 0 torotate.length =  2
-    let i = loopNum % toRotate.length;
-    //on init fulltext will be first word
-    let fullText = toRotate[i]; //devloper
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-    setText(updatedText);
+  // let tick = () => {
+  //   //on init loopnum 0 torotate.length =  2
+  //   let i = loopNum % toRotate.length;
+  //   //on init fulltext will be first word
+  //   let fullText = toRotate[i]; //devloper
+  //   let updatedText = isDeleting
+  //     ? fullText.substring(0, text.length - 1)
+  //     : fullText.substring(0, text.length + 1);
+  //   setText(updatedText);
 
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-    }
-  };
+  //   if (!isDeleting && updatedText === fullText) {
+  //     setIsDeleting(true);
+  //   } else if (isDeleting && updatedText === "") {
+  //     setIsDeleting(false);
+  //     setLoopNum(loopNum + 1);
+  //   }
+  // };
 
   let imgvariant = {
     animate: {
@@ -68,7 +68,7 @@ export default function Banner() {
             <div className="tagline"> welcome to my proraflio</div>
             <h1>
               {"Hi i'm a Sife"}
-              <div className="wrap">{text}</div>
+              {/* <div className="wrap">{text}</div> */}
             </h1>
             <p>
               hello Iam sife sife Ashfraf iam front end devloper that started

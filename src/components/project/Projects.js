@@ -1,5 +1,5 @@
 //import hooks
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 //import icon
 
@@ -11,9 +11,20 @@ import "./project.css";
 import data from "../data.json";
 //import boot strap
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
-
+import { Container, Box, Typography, Grid } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 function Projects() {
+  let imagesRef = useRef([]);
+  let [imageState, setImageState] = useState();
+  let theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 730,
+        lg: 1100,
+      },
+    },
+  });
   let [projectCard, setProjectCard] = useState([]);
   let tabscount = Math.ceil(data.length / 6);
   let tabclickhandler = (e, start, end) => {
@@ -23,36 +34,83 @@ function Projects() {
     e.target.classList.add("active");
     showprojects(start, end);
   };
+
+  useEffect(() => {
+    showprojects(0, 6);
+    document.querySelector(".tab-box").classList.add("active");
+  }, []);
+
+  let addrefitem = (img) => {
+    if (imagesRef.current.includes(img)) {
+      return;
+    } else {
+      imagesRef.current.push(img);
+      setImageState(imagesRef.current);
+    }
+  };
+
+  useEffect(() => {
+    console.log(imageState);
+  }, [imageState]);
+
+  // useEffect(() => {
+  //   if (projectCard.length > 0) {
+  //     elemnt = elemnt.current;
+  // let imgesContainer = elemnt.querySelectorAll(".main");
+  // console.log(imgesContainer);
+  //   }
+  // }, []);
+
+  // imgesContainer.forEach((imges) => {
+  //   let img = imges.querySelector("img");
+  //   console.log(img);
+  //   if (img.complete) {
+  //     img.classList.add("loaded");
+  //   } else {
+  //     img.addEventListener("load", () => {
+  //       img.classList.add("loaded");
+  //     });
+  //   }
+  // });
+
   let showprojects = (start, end) => {
     let show = [];
 
     for (let i = start; i < end; i++) {
       //there will be one data more if this is disable
       if (i <= data.length - 1) {
-        show.push(<ProjectCard {...data[i]} />);
+        show.push(<ProjectCard {...data[i]} index={i} ref={addrefitem} />);
       }
     }
 
     setProjectCard(show);
   };
-  useEffect(() => {
-    showprojects(0, 6);
-    document.querySelector(".tab-box").classList.add("active");
-  }, []);
+
   return (
-    <section className="projects" id="projects">
-      <Container fluid={"xxl"}>
-        <div className="data-header">
-          <h2>Projects {<GrReactjs />}</h2>
-          <p>this is my projects made with js&React </p>
-        </div>
+    <Box component={"section"} className="projects" id="projects">
+      <Container maxWidth={"xl"}>
+        {/*Heading*/}
+        <Box>
+          <Typography variant="h4" color="#fff" textAlign={"center"}>
+            My Projects {<GrReactjs />}
+          </Typography>
+          <Typography variant="body1" color="#fff">
+            this is my projects made with js&React {<GrReactjs />}
+          </Typography>
+        </Box>
+        {/* project tab bar*/}
         <ProjectCardtab
           tabclickhandler={tabclickhandler}
           tabscount={tabscount}
         />
-        <div className="data-card-container">{projectCard}</div>
+        {/* cards */}
+        <ThemeProvider theme={theme}>
+          <Grid container className="data-card-container" sx={{ flexGrow: 1 }}>
+            {projectCard}
+          </Grid>
+        </ThemeProvider>
       </Container>
-    </section>
+    </Box>
   );
 }
 export default Projects;

@@ -24,7 +24,7 @@ function ResponsiveAppBar() {
   let linkstyles = { color: "#fff", opacity: 0.75, "&:hover": { opacity: 1 } };
   const [anchorElNav, setAnchorElNav] = useState(null);
   let theme = createTheme();
-  console.log(theme);
+  // console.log(theme);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -73,7 +73,6 @@ function ResponsiveAppBar() {
               }}
             >
               <IconButton
-                key={1}
                 onClick={handleCloseNavMenu}
                 size="small"
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -82,14 +81,12 @@ function ResponsiveAppBar() {
               </IconButton>
 
               <IconButton
-                key={1}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <BsWhatsapp />
               </IconButton>
               <IconButton
-                key={1}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
