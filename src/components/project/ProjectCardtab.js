@@ -27,6 +27,7 @@ const TabBar = styled(Box)({
   borderRadius: "40px",
   overflow: "hidden",
 });
+// 2d6d424
 export default function ProjectCardtab({ tabclickhandler, tabscount }) {
   let tabs = [];
   for (let i = 1; i <= tabscount; i++) {
