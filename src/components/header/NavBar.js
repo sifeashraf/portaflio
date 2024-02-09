@@ -1,45 +1,55 @@
-import { BsLinkedin, BsWhatsapp, BsFacebook } from "react-icons/bs";
-
-import { AiOutlineMenu } from "react-icons/ai";
+//import hook
 import { useState } from "react";
-import "./header.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+//import style & img
+import "./header.css";
+import logo from "../../assets/img/my-logo.webp";
+
+//import component and icon
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
   Link,
-  Typography,
   MenuItem,
   Menu,
-  useScrollTrigger,
-  createTheme,
 } from "@mui/material";
+import { BsLinkedin, BsWhatsapp, BsFacebook } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
 
-import logo from "../../assets/img/my-logo.webp";
+let linkstyles = { color: "#fff", opacity: 0.75, "&:hover": { opacity: 1 } };
 
 function ResponsiveAppBar() {
-  let linkstyles = { color: "#fff", opacity: 0.75, "&:hover": { opacity: 1 } };
   const [anchorElNav, setAnchorElNav] = useState(null);
-  let theme = createTheme();
-  console.log(theme);
+  const [appBarOnScreen, setAppBarOnScreen] = useState(true);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < 20) {
+      if (!appBarOnScreen) {
+        setAppBarOnScreen(true);
+      }
+    } else {
+      if (appBarOnScreen) setAppBarOnScreen(false);
+    }
+  });
+
   return (
     <Box>
       <AppBar
-        position="fixed"
+        position={"fixed"}
         sx={{
-          backgroundColor: useScrollTrigger("1") ? "black" : "transparent",
-          transition: "all .5s ease-in-out",
+          backgroundColor: appBarOnScreen
+            ? "transparent !important"
+            : "black !important",
+          transition: "all 0.5s ease-in-out",
+          boxShadow: 0,
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -82,14 +92,14 @@ function ResponsiveAppBar() {
               </IconButton>
 
               <IconButton
-                key={1}
+                key={2}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <BsWhatsapp />
               </IconButton>
               <IconButton
-                key={1}
+                key={3}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -109,10 +119,10 @@ function ResponsiveAppBar() {
                 home
               </Link>
               <Link href="project" underline="none" sx={linkstyles}>
-                home
+                project
               </Link>
               <Link href="skills" underline="none" sx={linkstyles}>
-                home
+                skills
               </Link>
             </Box>
           </Box>
@@ -136,24 +146,60 @@ function ResponsiveAppBar() {
                 horizontal: "left",
               }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "none", sm: "block" },
+                display: { xs: "block", sm: "none" },
+                "& .MuiPaper-root": {
+                  width: "100% !important",
+                  backgroundColor: "black !important",
+                },
               }}
             >
-              <MenuItem key={1} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{1}</Typography>
+              <MenuItem
+                key={1}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  backgroundColor: "black",
+                }}
+              >
+                <Link
+                  underline="none"
+                  href="#home"
+                  color="rgb(255 255 255 / 75%)"
+                >
+                  Home
+                </Link>
               </MenuItem>
-              <MenuItem key={2} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{2}</Typography>
+              <MenuItem
+                key={2}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  backgroundColor: "black",
+                }}
+              >
+                <Link
+                  underline="none"
+                  href="#projects"
+                  color="rgb(255 255 255 / 75%)"
+                >
+                  Projects
+                </Link>
               </MenuItem>
-              <MenuItem key={3} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{3}</Typography>
+              <MenuItem
+                key={3}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  backgroundColor: "black",
+                }}
+              >
+                <Link
+                  underline="none"
+                  href="#skills"
+                  color="rgb(255 255 255 / 75%)"
+                >
+                  Skills
+                </Link>
               </MenuItem>
             </Menu>
           </Box>

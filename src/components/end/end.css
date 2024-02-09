@@ -15,17 +15,17 @@
 .contact h2 {
   font-size: 42px;
 }
-.contact .right {
+.contact {
   padding: 15px 0;
   border-radius: 5px;
 }
-.contact .right input,
+.contact input,
 textarea {
   margin-bottom: 15px;
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  width: 100%;
+  /* width: 50%; */
   padding: 17px 11px;
   border-radius: 18px;
   font-size: 18px;
@@ -33,7 +33,7 @@ textarea {
   letter-spacing: 0.8px;
   transition: 0.3s ease-in-out;
 }
-.contact .right input:focus,
+.contact input:focus,
 .contact textarea:focus {
   background: rgba(255, 255, 255, 1);
   color: #121212;
@@ -45,35 +45,5 @@ textarea {
   font-size: 17px;
   font-weight: 800;
 }
-.contact-image {
-  width: 100%;
-}
-.success {
-  background-color: green;
-}
-.danger {
-  background-color: red;
-}
+
 /* footer*/
-.align-item-center {
-  align-items: center;
-  justify-content: center;
-}
-footer {
-  padding: 50px 0;
-  background-image: url("../../assets//img/footer-bg.webp");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-footer img {
-  width: 26%;
-  font-weight: 700;
-  font-size: 14px;
-  color: #b8b8b8;
-  letter-spacing: 0.5px;
-  margin-top: 20px;
-}
-.fix-icon a img {
-  transform: translate(1px, -10px);
-}

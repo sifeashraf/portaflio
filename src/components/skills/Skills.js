@@ -8,12 +8,13 @@ import { motion } from "framer-motion";
 import colorSharp from "../../assets/img/color-sharp.webp";
 
 //import style
+import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./skills.css";
 
 export default function Skills() {
-  var settings = {
+  const settings = {
     loops: false,
     infinite: false,
     dots: false,

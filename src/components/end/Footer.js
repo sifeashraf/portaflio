@@ -1,40 +1,87 @@
 //import component
-import { Col, Row, Container } from "react-bootstrap";
+import {
+  Container,
+  Stack,
+  Box,
+  Typography,
+  Link,
+  useMediaQuery,
+  styled,
+} from "@mui/material";
+import { BsLinkedin, BsWhatsapp, BsFacebook } from "react-icons/bs";
 
-//import img
-import logo from "../../assets/img/my-logo.webp";
-import navIcon1 from "../../assets/img/nav-icon1.svg";
-import navIcon2 from "../../assets/img/nav-icon2.svg";
-import navIcon3 from "../../assets/img/nav-icon3.svg";
-//import style
-import "bootstrap/dist/css/bootstrap.min.css";
+//import
 
+//import style & img
+import { iconContainer, iconBox } from "../ComponentStyle";
 import "./end.css";
 
+import logo from "../../assets/img/my-logo.webp";
+
+const IconContainer = styled(Box)(iconContainer);
+const Iconbox = styled(Link)(iconBox);
+
+let datenow = new Date().getFullYear();
 export default function Footer() {
+  let screenwidth = useMediaQuery("(max-width:600px)");
   return (
-    <footer className="footer">
-      <Container>
-        <Row className="align-item-center">
-          <Col sm={6}>
-            <img src={logo} />
-          </Col>
-          <Col sm={6} className="text-center text-sm-end">
-            <div className="social-icon fix-icon">
-              <a href="#">
-                <img src={navIcon1} alt="icon" />
-              </a>
-              <a href="#">
-                <img src={navIcon2} alt="icon" />
-              </a>
-              <a href="#">
-                <img src={navIcon3} alt="icon" />
-              </a>
-              <p>copy right 2023@ Reserved for Sife Ashraf</p>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
+    <Container
+      maxWidth={false}
+      className="footer"
+      sx={{
+        padding: "15px",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${require("../../assets/img/footer-bg.webp")})`,
+      }}
+    >
+      <Stack
+        spacing={screenwidth ? 2 : 0}
+        direction={screenwidth ? "column" : "row"}
+        sx={{
+          justifyContent: { xs: "center", sm: "space-between" },
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: { xs: "100%", sm: "50%" },
+            maxWidth: "300px",
+          }}
+        >
+          <img src={logo} style={{ width: "100%" }} />
+        </Box>
+        <Box
+          sx={{
+            width: { xs: "100%", sm: "45%" },
+            display: screenwidth && "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <IconContainer sx={{ flexGrow: 1 }}>
+            <Iconbox href="#">
+              <div className="overlay" />
+              <BsLinkedin className="icon" />
+            </Iconbox>
+            <Iconbox href="#">
+              <div className="overlay" />
+              <BsWhatsapp className="icon" />
+            </Iconbox>
+            <Iconbox href="#">
+              <div className="overlay" />
+              <BsFacebook className="icon" />
+            </Iconbox>
+          </IconContainer>
+          <Typography variant="subtitle1" sx={{ textAlign: "right" }}>
+            Copy Right @{datenow} for SifeAshraf
+          </Typography>
+        </Box>
+      </Stack>
+    </Container>
   );
 }

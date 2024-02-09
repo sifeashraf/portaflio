@@ -21,7 +21,7 @@ export default function App() {
       <Projects />
       <Contact />
       <Footer />
-      {/* <ScrollToTop.jsx /> */}
+      <ScrollToTop />
     </>
   );
 }

@@ -1,6 +1,6 @@
+// import component & hook
 import { AiOutlineArrowUp } from "react-icons/ai";
 import Fab from "@mui/material/Fab";
-
 import { Zoom, useScrollTrigger } from "@mui/material";
 
 export default function ScrollToTop() {
@@ -18,7 +18,7 @@ export default function ScrollToTop() {
       <Fab
         sx={fabStyle}
         variant="extended"
-        color={"primary"}
+        color="white"
         aria-label="add"
         onClick={scrolltotop}
       >

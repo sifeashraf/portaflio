@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 //import component
 import { Col, Row } from "react-bootstrap";
-import Downloader from "./Downloader";
 import { motion } from "framer-motion";
 
 //import img
@@ -80,7 +79,15 @@ export default function Banner() {
             </p>
             <button className="button">
               <span>
-                <Downloader />
+                <a
+                  href="new-cv.pdf"
+                  download={"cv"}
+                  className="downloader"
+                  style={{ textDecoration: "none" }}
+                >
+                  Download My CV
+                </a>
+
                 <FiArrowRightCircle size={25} />
               </span>
             </button>

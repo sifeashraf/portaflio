@@ -6,22 +6,7 @@
 .projects p {
   text-align: center;
 }
-.projects .tabs-bar {
-  display: flex;
-  width: 70%;
-  margin: 0 auto 50px;
-  justify-content: center;
-  border: 1px solid #b8b8b8;
-  border-radius: 40px;
-  overflow: hidden;
-}
-.projects .tab-box {
-  padding: 10px 15px;
-  font-size: 23px;
-  flex: 1;
-  text-align: center;
-  position: relative;
-}
+
 .projects .tab-box:nth-child(2) {
   border: 1px solid #b8b8b8;
 }
@@ -29,45 +14,10 @@
   margin: 20px 0;
 }
 
-.projects .tabs-bar:hover {
-  cursor: pointer;
-}
-
-.tabs-bar .tab-box::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: 0.3s ease-in-out;
-}
 .tabs-bar .tab-box.active::before {
   width: 100% !important;
 }
-/* @media (max-width: 767px) {
-  .main {
-    margin: 0 auto !important;
-    width: 50% !important;
-  }
-} */
-@media (max-width: 711px) {
-  .main {
-    width: 100% !important;
-  }
-}
-@media (min-width: 712px) {
-  .main {
-    width: 48%;
-  }
-}
-@media (min-width: 1100px) {
-  .main {
-    width: 30% !important;
-  }
-}
+
 .project-card-container {
   display: flex;
   flex-wrap: wrap;
@@ -86,13 +36,11 @@
   border-radius: 17px;
   margin-bottom: 15px;
   position: relative;
-  z-index: 10;
   overflow: hidden;
   transition: 1s ease-in-out all;
-  /* background-image: url("../../assets/img/project_image/calcoulater-small.png"); */
 }
 
-.project-box.filter {
+.project-box img.filter {
   filter: blur(4.79px) contrast(0.51) grayscale(0.63);
   -webkit-filter: blur(4.79px) contrast(0.51) grayscale(0.63);
   -moz-filter: blur(4.79px) contrast(0.51) grayscale(0.63);
@@ -105,42 +53,21 @@
   object-fit: cover;
 }
 
-.project-box::before {
-  content: "";
-  width: 100%;
-  height: 0;
-  position: absolute;
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  transition: 1s ease-in-out all;
-  overflow: hidden;
-  z-index: 1;
-}
-.project-box:hover::before {
-  height: 100%;
-  opacity: 0.7;
-}
-
 .project-box .project-text {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: -1;
   width: 100%;
   display: flex;
   text-align: center;
   flex-direction: column;
-  transition: 1.5s ease-in-out all;
+  transition-delay: 0.5s;
+  transition: 1s ease-in-out all;
   opacity: 0;
 }
 .project-box:hover .project-text {
   opacity: 1;
-}
-.main .icon {
-  position: absolute;
-  right: -40px;
-  font-size: 32px;
   z-index: 2;
-}
-.project-box:hover .icon {
-  right: 8px;
+  color: white;
 }
